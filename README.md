@@ -2,7 +2,7 @@
 School museum assignement
 
 ## TODO
-- [ ] Create navigation-bar element 
+- [x] Create navigation-bar element (tried and failed, code is too messy)
 - [ ] Hightlight selected menu in navigation-bar
 - [ ] Extend footer element
 - [ ] Change title in sub-pages
