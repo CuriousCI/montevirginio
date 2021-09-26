@@ -1,0 +1,41 @@
+div {
+	height: 100%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+article {
+	height: 400px;
+
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+}
+
+picture {
+	overflow: hidden;
+}
+
+img {
+	width: clamp(100%, auto, 100vw);
+	height: clamp(100%, auto, 100vh);
+
+}
+
+
+aside {
+	display: grid;
+	place-items: start center;
+
+	padding: 10%;
+	box-sizing: border-box;
+}
+
+p {
+	width: 100%;
+	
+	margin: unset;
+
+	text-align: justify;
+}
