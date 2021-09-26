@@ -18,29 +18,35 @@
 <body>
 	<iframe src="../navigation" frameborder="0"></iframe>
 	<h1>prenotazioni</h1>
+	<div class="content">
+		<form action="../" method="post">
+			<div class="field">
+				<label for="name">Nome</label>
+				<input type="text" name="name" id="name" required>
+			</div>
 
-	<form action="../" method="post">
-		<div class="field">
-			<label for="name">Nome</label>
-			<input type="text" name="name" id="name" required>
-		</div>
+			<div class="field">
+				<label for="surname">Cognome</label>
+				<input type="text" name="surname" id="surname" required>
+			</div>
 
-		<div class="field">
-			<label for="surname">Cognome</label>
-			<input type="text" name="surname" id="surname" required>
-		</div>
+			<div class="field">
+				<label for="email">Email</label>
+				<input type="email" name="email" id="email" required>
+			</div>
 
-		<div class="field">
-			<label for="email">Email</label>
-			<input type="email" name="email" id="email" required>
-		</div>
+			<br>
 
-		<p>dovrà cliccare il link nella e-mail per confermare la prenotazione e ricevere il biglietto</p>
+			<div>dovrà cliccare il link nella e-mail per confermare la prenotazione e ricevere il biglietto</div>
 
-		<input type="datetime-local" name="date" id="date">
+			<hr>
 
-		<input type="submit" value="prenota!">
-	</form>
+			<div class="submit">
+				<input type="datetime-local" name="date" id="date">
+				<input type="submit" value="prenota!">
+			</div>
+		</form>
+	</div>
 
 </body>
 

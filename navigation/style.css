@@ -7,6 +7,8 @@ nav {
 	align-items: center;
 
 	background-color: rgb(250, 250, 250);
+
+	overflow: hidden;
 }
 
 nav a {
@@ -20,7 +22,6 @@ nav a {
 	box-sizing: border-box;
 
 	font-size: 1.3em;
-	/* text-overflow: ellipsis; */
 	text-decoration: none;
 	color: black;
 }
@@ -34,5 +35,5 @@ nav a:focus {
 }
 
 nav a {
-	transition: 300ms linear;
+	transition: background-color 300ms, color 300ms;
 }

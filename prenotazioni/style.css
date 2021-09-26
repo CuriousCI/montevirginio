@@ -1,3 +1,8 @@
+.content {
+	display: flex;
+	justify-content: center;
+}
+
 form {
 	width: 600px;
 
@@ -13,5 +18,28 @@ form {
 	width: 100%;
 
 	display: grid;
-	grid-template-columns: 1fr 4fr;
+	grid-template-columns: 1fr 6fr;
+	align-items: flex-end;
+}
+
+.submit {
+	display: grid;
+	grid-template-columns: 6fr 1fr;
+
+	gap: 20px;
+}
+
+.field label {
+	text-align: left;
+}
+
+form div {
+	text-align: center;
+	font-weight: bold;
+}
+
+hr {
+	width: 100%;
+	border: unset;
+	border-bottom: 1px solid lightgray;
 }
