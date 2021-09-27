@@ -87,10 +87,5 @@ customElements.define(
 				)
 			)
 		}
-
-		static get obeservedAttributes() {
-			return ['resource']
-		}
-
 	}
 )
