@@ -7,24 +7,41 @@ div {
 }
 
 article {
-	height: 400px;
+	max-width: 1000px;
+	width: 100%;
+	height: min-content;
 
 	display: grid;
-	grid-template-columns: repeat(2, 1fr);
+	align-items: center	;
+	/* grid-template-columns: repeat(2, 1fr); */
+	grid-template-columns: repeat(auto-fit, minmax(300px, 400px));
 }
 
-picture {
-	overflow: hidden;
+.montevirginio {
+	background-image: url('../assets/montevirginio.jpg');
+}
+
+.eremo {
+	background-image: url('../assets/eremo.jpg');
 }
 
 img {
-	width: clamp(100%, auto, 100vw);
-	height: clamp(100%, auto, 100vh);
-
+	max-width: 100%;
 }
 
+picture {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	background-size: conver;
+	background-repeat: no-repeat	;
+	background-position: center;
+}
 
 aside {
+	height: min-content;
+
 	display: grid;
 	place-items: start center;
 
