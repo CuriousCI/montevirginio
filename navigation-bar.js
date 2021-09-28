@@ -58,7 +58,7 @@ const sheet = `
 		display: inline;
 	}
 }
-`;
+`
 
 customElements.define(
 	'navigation-bar',
@@ -70,33 +70,28 @@ customElements.define(
 			{ href: '/prenotazioni', icon: '🎫', text: 'prenotazioni' },
 		]
 
+
 		constructor() {
-			super();
+			super()
 
-			this.ref = this.getAttribute('resource') || '/'
-			this.relative = this.getAttribute('relative') || '..'
-
-			this.attachShadow({ mode: 'open' });
-			this.routes
-				.map(({ href, icon, text }) =>
+			this.attachShadow({ mode: 'open' })
+				.append(
+					...this.routes.map(({ href, icon, text }) =>
+						Object.assign(
+							document.createElement('a'),
+							{
+								href: `${this.getAttribute('relative') || '..'}${href}`,
+								innerHTML: `<span>${icon}<span class="text"> ${text}</span></span>`,
+								target: '_parent',
+								className: (this.getAttribute('resource') || '/') == href ? 'highlight' : ''
+							}
+						)
+					),
 					Object.assign(
-						document.createElement('a'),
-						{
-							href: `${this.relative}${href}`,
-							innerHTML: `<span>${icon}<span class="text"> ${text}</span></span>`,
-							target: '_parent',
-							className: this.ref == href ? 'highlight' : ''
-						}
+						document.createElement('style'),
+						{ textContent: sheet }
 					)
 				)
-				.forEach(link => this.shadowRoot.appendChild(link))
-
-			this.shadowRoot.appendChild(
-				Object.assign(
-					document.createElement('style'),
-					{ textContent: sheet }
-				)
-			)
 		}
 	}
 )
