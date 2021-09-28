@@ -18,7 +18,7 @@ const sheet = `
 }
 
 :host a {
-	width: 175px;
+	width: clamp(50px, 25%, 175px);
 	height: 100%;
 
 	display: grid;
@@ -47,16 +47,27 @@ const sheet = `
 :host a {
 	transition: background-color 1s, color 300ms;
 }
+
+:host span.text {
+	display: none;
+}
+
+@media (min-width: 700px)
+{
+	:host span.text {
+		display: inline;
+	}
+}
 `;
 
 customElements.define(
 	'navigation-bar',
 	class extends HTMLElement {
 		routes = [
-			{ href: '/', text: '🏡 home' },
-			{ href: '/opere', text: '🎨 opere' },
-			{ href: '/mostre', text: '🪑 mostre' },
-			{ href: '/prenotazioni', text: '🎫 prenotazioni' },
+			{ href: '/', icon: '🏡', text: 'home' },
+			{ href: '/opere', icon: '🎨', text: 'opere' },
+			{ href: '/mostre', icon: '🪑', text: 'mostre' },
+			{ href: '/prenotazioni', icon: '🎫', text: 'prenotazioni' },
 		]
 
 		constructor() {
@@ -67,12 +78,12 @@ customElements.define(
 
 			this.attachShadow({ mode: 'open' });
 			this.routes
-				.map(({ href, text }) =>
+				.map(({ href, icon, text }) =>
 					Object.assign(
 						document.createElement('a'),
 						{
 							href: `${this.relative}${href}`,
-							text: text,
+							innerHTML: `<span>${icon}<span class="text"> ${text}</span></span>`,
 							target: '_parent',
 							className: this.ref == href ? 'highlight' : ''
 						}
