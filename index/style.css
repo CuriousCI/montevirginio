@@ -1,4 +1,4 @@
-div {
+main {
 	height: 100%;
 
 	display: flex;
@@ -6,14 +6,24 @@ div {
 	align-items: center;
 }
 
-article {
+picture {
+	width: 100%;
+	height: 45vh;
+
+	background-image: url('../assets/tempio.jpg'), linear-gradient(to right, #999, #AAA);
+	background-size: cover;
+	background-position: center;
+	background-blend-mode: luminosity;
+}
+
+/* article {
 	max-width: 1000px;
 	width: 100%;
 	height: min-content;
 
 	display: grid;
 	align-items: center	;
-	/* grid-template-columns: repeat(2, 1fr); */
+	grid-template-columns: repeat(2, 1fr);
 	grid-template-columns: repeat(auto-fit, minmax(300px, 400px));
 }
 
@@ -55,4 +65,4 @@ p {
 	margin: unset;
 
 	text-align: justify;
-}
+} */

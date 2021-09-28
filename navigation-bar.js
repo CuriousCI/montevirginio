@@ -71,7 +71,7 @@ customElements.define(
 					Object.assign(
 						document.createElement('a'),
 						{
-							href: `${this.relative}${href} `,
+							href: `${this.relative}${href}`,
 							text: text,
 							target: '_parent',
 							className: this.ref == href ? 'highlight' : ''
